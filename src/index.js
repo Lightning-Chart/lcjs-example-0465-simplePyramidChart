@@ -5,21 +5,30 @@
 const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
-const { PyramidChartTypes, PyramidLabelSide, SliceLabelFormatters, lightningChart, LegendBoxBuilders, Themes } = lcjs
+const { PyramidChartTypes, PyramidLabelSide, PyramidSliceModes, SliceLabelFormatters, lightningChart, LegendBoxBuilders, Themes } = lcjs
 
-// Create a Pyramid chart
-const pyramid = lightningChart({
+const lc = lightningChart({
             resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
         })
-    .Pyramid({
-        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
-        type: PyramidChartTypes.LabelsOnSides,
-    })
+const dashboard = lc.Dashboard({
+    numberOfColumns: 2,
+    numberOfRows: 1,
+    theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
+})
+
+const pyramid1 = dashboard
+    .createPyramidChart({ columnIndex: 0, rowIndex: 0, type: PyramidChartTypes.LabelsOnSides })
     .setTitle('Company staff growth')
-    .setNeckWidth(80)
     .setSliceGap(5)
-    .setPadding({ bottom: 45 })
+    .setLabelSide(PyramidLabelSide.Left)
+    .setSliceMode(PyramidSliceModes.VariableWidth)
+
+const pyramid2 = dashboard
+    .createPyramidChart({ columnIndex: 1, rowIndex: 0, type: PyramidChartTypes.LabelsOnSides })
+    .setTitle('Company staff growth')
+    .setSliceGap(5)
     .setLabelSide(PyramidLabelSide.Right)
+    .setSliceMode(PyramidSliceModes.VariableHeight)
 
 // Data for slices
 const data = [
@@ -40,20 +49,9 @@ const data = [
         value: 17,
     },
 ]
-// Add data to the slices
-pyramid.addSlices(data)
 
-// Set formatter of Slice Labels
-pyramid.setLabelFormatter(SliceLabelFormatters.NamePlusValue)
+pyramid1.addSlices(data)
+pyramid1.setLabelFormatter(SliceLabelFormatters.NamePlusValue)
 
-// Add LegendBox and define the position in the chart
-const lb = pyramid
-    .addLegendBox(LegendBoxBuilders.HorizontalLegendBox)
-    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
-    .setAutoDispose({
-        type: 'max-width',
-        maxWidth: 0.8,
-    })
-
-// Add the Pyramid to the LegendBox and disable the button click functionality.
-lb.add(pyramid, { toggleVisibilityOnClick: false })
+pyramid2.addSlices(data)
+pyramid2.setLabelFormatter(SliceLabelFormatters.NamePlusValue)

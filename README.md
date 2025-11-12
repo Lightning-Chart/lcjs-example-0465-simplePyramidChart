@@ -141,12 +141,12 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2025. All rights reserved.
 
 
-[Pyramid Chart]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/classes/PyramidChart.html
-[Pyramid Chart Types]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/variables/PyramidChartTypes-1.html
-[Pyramid Label Side]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/enums/PyramidLabelSide.html
-[Slice label formatter]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/types/SliceLabelFormatter.html
-[Palette]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/variables/ColorPalettes.html
-[SolidFillPalette]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/functions/SolidFillPalette.html
-[Solid Line]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/classes/SolidLine.html
-[Solid Fill]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/classes/SolidFill.html
+[Pyramid Chart]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/PyramidChart.html
+[Pyramid Chart Types]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/variables/PyramidChartTypes-1.html
+[Pyramid Label Side]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/enums/PyramidLabelSide.html
+[Slice label formatter]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/types/SliceLabelFormatter.html
+[Palette]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/variables/ColorPalettes.html
+[SolidFillPalette]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/functions/SolidFillPalette.html
+[Solid Line]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/SolidLine.html
+[Solid Fill]: https://lightningchart.com/js-charts/api-documentation/v8.1.0/classes/SolidFill.html
 

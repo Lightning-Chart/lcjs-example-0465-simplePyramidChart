@@ -29,10 +29,9 @@ const pyramid1 = dashboard
     .setSliceMode(PyramidSliceModes.VariableWidth)
 
 const pyramid2 = dashboard
-    .createPyramidChart({ columnIndex: 1, rowIndex: 0, type: PyramidChartTypes.LabelsOnSides })
+    .createPyramidChart({ columnIndex: 1, rowIndex: 0, type: PyramidChartTypes.LabelsInsideSlices })
     .setTitle('Company staff growth')
     .setSliceGap(5)
-    .setLabelSide(PyramidLabelSide.Right)
     .setSliceMode(PyramidSliceModes.VariableHeight)
 
 // Data for slices
